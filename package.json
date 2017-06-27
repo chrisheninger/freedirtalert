@@ -1,7 +1,7 @@
 {
   "name": "freedirtalert.com",
   "version": "1.0.0",
-  "homepage": "http://freedirtalert.com",
+  "homepage": "https://freedirtalert.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
