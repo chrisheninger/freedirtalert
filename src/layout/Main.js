@@ -9,11 +9,19 @@ class Main extends Component {
     const { styles } = this.props;
     return (
       <div className={styles.root}>
-        <h1 className={styles.logo}>
-          <span role="img" aria-label="free">🆓</span>{' '}
-          <span role="img" aria-label="dirt">🌎</span>{' '}
-          <span role="img" aria-label="alert">🚨</span>
-        </h1>
+        <header className={styles.header}>
+          <div className={styles.logo}>
+            <span className={styles.emoji} role="img" aria-label="free">
+              🆓
+            </span>
+            <span className={styles.emoji} role="img" aria-label="dirt">
+              🌎
+            </span>
+            <span className={styles.emoji} role="img" aria-label="alert">
+              🚨
+            </span>
+          </div>
+        </header>
         <Router>
           <Route exact path="/" component={Home} />
         </Router>
