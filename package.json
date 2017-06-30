@@ -23,9 +23,16 @@
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-react-app": "^1.0.5",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.1",
     "lint-staged": "^4.0.0",
-    "prettier": "^1.4.4",
-    "react-scripts": "^1.0.7"
+    "prettier": "^1.5.2",
+    "react-scripts": "^1.0.10"
   }
 }
