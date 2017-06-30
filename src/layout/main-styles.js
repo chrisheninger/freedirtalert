@@ -17,8 +17,8 @@ export default {
     alignItems: 'center',
   }),
   logo: props => ({
-    width: '300px',
-    height: '120px',
+    width: '240px',
+    height: '100px',
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -27,10 +27,5 @@ export default {
   }),
   emoji: props => ({
     display: 'inline-block',
-    width: '60px',
-    fontSize: '40px',
-    lineHeight: '60px',
-    textAlign: 'center',
-    transform: 'scale(2)',
   }),
 };
