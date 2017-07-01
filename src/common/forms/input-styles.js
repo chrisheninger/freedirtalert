@@ -37,7 +37,7 @@ export default {
     ':focus': {
       outline: 'none', // Disable default focus glow
       borderColor: props.theme.colors.primary,
-      boxShadow: `0px 0px 0px 3px ${props.theme.colors.primaryGlow}`,
+      boxShadow: `0px 0px 0px 3px ${props.theme.colors.primaryLight}`,
     },
   }),
   input: () => ({}),

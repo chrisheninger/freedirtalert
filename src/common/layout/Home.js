@@ -9,6 +9,7 @@ const Home = ({ styles }) =>
     {data.map((dirt, i) =>
       <Card
         key={i}
+        className={styles.card}
         image={dirt.image}
         title={dirt.title}
         location={dirt.location}

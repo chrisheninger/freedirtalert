@@ -15,5 +15,31 @@ export default {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: '24px',
+  }),
+  city: props => ({
+    display: 'flex',
+    alignItems: 'center',
+  }),
+  text: props => ({
+    fontSize: '24px',
+    fontWeight: '700',
+  }),
+  switch: props => ({
+    display: 'flex',
+    padding: '2px',
+    marginTop: '4px',
+    marginLeft: '6px',
+    fill: props.theme.colors.secondary,
+  }),
+  footer: props => ({
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderTop: `1px solid ${props.theme.colors.gray300}`,
+    marginTop: '24px',
+    paddingTop: '24px',
   }),
 };

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-fela';
+import kittens from './kittens';
 
 class Kitten extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      kitten: '😸',
+      kitten: kittens[2],
     };
   }
 
@@ -16,7 +17,6 @@ class Kitten extends Component {
   }
 
   getRandomKitten = () => {
-    const kittens = ['😸', '😻', '😹', '😼', '😽', '😺'];
     const kitten = kittens[Math.floor(Math.random() * kittens.length)];
     this.setState(() => ({ kitten }));
   };
@@ -32,14 +32,14 @@ class Kitten extends Component {
   }
 }
 
-const mapStylesToProps = props => renderer => ({
-  kitten: renderer.renderRule(() => ({
+const mapStylesToProps = {
+  kitten: props => ({
     textAlign: 'center',
     fontSize: '48px',
     lineHeight: '1',
     marginTop: '24px',
     padding: '16px',
-  })),
-});
+  }),
+};
 
 export default connect(mapStylesToProps)(Kitten);

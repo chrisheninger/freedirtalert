@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-fela';
 import cardStyles from './card-styles';
 
-function Card({ children, location, styles, title }) {
+function Card({ children, className, location, styles, title }) {
   return (
-    <div className={styles.root}>
+    <div className={className ? className + ' ' + styles.root : styles.root}>
       <div className={styles.image} />
       <div className={styles.content}>
         <div className={styles.title} title={title}>
@@ -15,20 +15,17 @@ function Card({ children, location, styles, title }) {
           {location}
         </div>
       </div>
-      {/* <div className={styles.actions}>
-        <button className="mdc-button mdc-button--compact mdc-card__action">
-          Action 1
-        </button>
-        <button className="mdc-button mdc-button--compact mdc-card__action">
-          Action 2
-        </button>
-      </div> */}
+      <div className={styles.actions}>
+        {/* <button>Action 1</button>
+        <button>Action 2</button> */}
+      </div>
     </div>
   );
 }
 
 Card.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.node,
   styles: PropTypes.object,
 };
 

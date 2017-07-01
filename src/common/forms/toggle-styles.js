@@ -23,8 +23,8 @@ export default {
         borderRadius: props.type === 'checkbox' ? '5px' : '100%',
         boxShadow:
           props.type === 'checkbox'
-            ? `inset 0px 0px 0px 3px ${props.theme.colors.primaryGlow}`
-            : `inset 0px 0px 0px 2px ${props.theme.colors.primaryGlow}`,
+            ? `inset 0px 0px 0px 3px ${props.theme.colors.primaryLight}`
+            : `inset 0px 0px 0px 2px ${props.theme.colors.primaryLight}`,
       },
     },
   }),

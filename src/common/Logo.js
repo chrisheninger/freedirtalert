@@ -3,7 +3,7 @@ import { connect } from 'react-fela';
 
 function Logo({ styles }) {
   return (
-    <div className={styles.logo}>
+    <div className={styles.logo} title="Free Dirt Alert">
       <svg
         className={styles.emoji}
         xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,6 @@ export default connect({
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
-    cursor: 'default',
     userSelect: 'none',
   }),
   emoji: props => ({
