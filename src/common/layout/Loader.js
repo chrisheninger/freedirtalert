@@ -10,7 +10,7 @@ function LoadingIndicator({ styles, text }) {
         height="70"
         viewBox="0 0 135 140"
         xmlns="http://www.w3.org/2000/svg"
-        fill="#009ad3"
+        fill="#795548"
       >
         <rect y="10" width="15" height="120" rx="6">
           <animate
@@ -104,32 +104,24 @@ function LoadingIndicator({ styles, text }) {
         </rect>
       </svg>
       <div className={styles.text}>
-        {text || 'Loading…'}
+        {text || 'Shoveling all the dirt…'}
       </div>
     </div>
   );
 }
 
-const mapStylesToProps = props => renderer => ({
-  root: renderer.renderRule(
-    props => ({
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flex: '1',
-    }),
-    props
-  ),
-  text: renderer.renderRule(
-    props => ({
-      color: props.theme.colors.gray700,
-      fontSize: '16px',
-      fontWeight: '500',
-      marginTop: '32px',
-    }),
-    props
-  ),
-});
-
-export default connect(mapStylesToProps)(LoadingIndicator);
+export default connect({
+  root: props => ({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: '1',
+  }),
+  text: props => ({
+    color: props.theme.colors.gray700,
+    fontSize: '16px',
+    fontWeight: '500',
+    marginTop: '32px',
+  }),
+})(LoadingIndicator);

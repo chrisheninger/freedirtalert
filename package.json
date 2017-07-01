@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://freedirtalert.com",
   "scripts": {
-    "scraper": "node scraper.js",
+    "shovel": "node shovel.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "react-scripts build && gh-pages -d build",
@@ -22,6 +22,7 @@
     "react-fela": "^5.0.4",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
+    "store2": "^2.5.1",
     "timeago.js": "^3.0.2"
   },
   "devDependencies": {
@@ -35,8 +36,8 @@
     "husky": "^0.14.2",
     "lint-staged": "^4.0.0",
     "lodash": "^4.17.4",
+    "parse-rss": "^1.0.3",
     "prettier": "^1.5.2",
-    "react-scripts": "^1.0.10",
-    "parse-rss": "^1.0.3"
+    "react-scripts": "^1.0.10"
   }
 }
