@@ -18,6 +18,7 @@ const Header = ({ city, styles }) =>
       </span>
       <Link to="/cities" className={styles.switch}>
         <svg
+          title="Change cities"
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"

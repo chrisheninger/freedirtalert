@@ -25,7 +25,11 @@ class Kitten extends Component {
     const { styles } = this.props;
     const { kitten } = this.state;
     return (
-      <button className={styles.kitten} onClick={this.getRandomKitten}>
+      <button
+        aria-label="Happy kitten button"
+        className={styles.kitten}
+        onClick={this.getRandomKitten}
+      >
         {kitten}
       </button>
     );
