@@ -103,7 +103,9 @@ function LoadingIndicator({ styles, text }) {
           />
         </rect>
       </svg>
-      <div className={styles.text}>{text || 'Loading…'}</div>
+      <div className={styles.text}>
+        {text || 'Loading…'}
+      </div>
     </div>
   );
 }

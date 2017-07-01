@@ -36,11 +36,13 @@ class Toggle extends PureComponent {
       <div className={classNames(styles.scaffold, className)}>
         <label
           className={styles.root}
-          ref={l => { this.label = l; }}
+          ref={l => {
+            this.label = l;
+          }}
           onKeyDown={e => {
             if (e.keyCode === 32) {
               e.preventDefault();
-              this.label.click()
+              this.label.click();
             }
           }}
           tabIndex={passthroughProps.disabled ? null : tabIndex}
@@ -49,10 +51,14 @@ class Toggle extends PureComponent {
           <span className={styles.toggle}>
             {passthroughProps.checked ? checkedIcon : uncheckedIcon}
           </span>
-          <span className={styles.label}>{label}</span>
+          <span className={styles.label}>
+            {label}
+          </span>
         </label>
         {validation
-          ? <div className={styles.validation}>{validation}</div>
+          ? <div className={styles.validation}>
+              {validation}
+            </div>
           : null}
       </div>
     );

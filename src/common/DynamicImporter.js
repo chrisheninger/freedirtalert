@@ -28,7 +28,11 @@ class DynamicImporter extends Component {
         }));
       })
       .catch(err => {
-        return <div>Something went wrong. {err}</div>;
+        return (
+          <div>
+            Something went wrong. {err}
+          </div>
+        );
       });
   }
 

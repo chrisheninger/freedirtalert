@@ -13,9 +13,11 @@ class Select extends PureComponent {
         label: option,
       }));
     }
-    return opts.map(opt => (
-      <option value={opt.value} key={opt.value}>{opt.label}</option>
-    ));
+    return opts.map(opt =>
+      <option value={opt.value} key={opt.value}>
+        {opt.label}
+      </option>
+    );
   }
 
   render() {
@@ -44,7 +46,9 @@ class Select extends PureComponent {
           {this.renderOptions(options)}
         </select>
         {validation
-          ? <div className={styles.validation}>{validation}</div>
+          ? <div className={styles.validation}>
+              {validation}
+            </div>
           : null}
       </div>
     );

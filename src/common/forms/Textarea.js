@@ -28,7 +28,9 @@ class Textarea extends PureComponent {
           {...passthroughProps}
         />
         {validation
-          ? <div className={styles.validation}>{validation}</div>
+          ? <div className={styles.validation}>
+              {validation}
+            </div>
           : null}
       </div>
     );

@@ -16,16 +16,4 @@ export default {
     justifyContent: 'center',
     alignItems: 'center',
   }),
-  logo: props => ({
-    width: '240px',
-    height: '100px',
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    cursor: 'default',
-    userSelect: 'none',
-  }),
-  emoji: props => ({
-    display: 'inline-block',
-  }),
 };

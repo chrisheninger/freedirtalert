@@ -18,7 +18,8 @@ export const colors = {
 };
 
 export const typography = {
-  sans: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+  sans:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
   mono: '"Source Code Pro", monospace',
   headingColor: colors.gray600,
   bodyColor: colors.gray800,
@@ -32,9 +33,9 @@ export const breakpoints = {
   desktop: `@media (min-width: 1200px)`,
 };
 
-export const globalBorderRadius = '4px';
+export const globalBorderRadius = '2px';
 export const globalBoxShadow =
-  '0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)';
+  '0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)';
 export const globalPadding = {
   padding: '12px',
   [breakpoints.tabletPortrait]: {
@@ -48,6 +49,12 @@ export const globalPadding = {
   },
 };
 
+export const ellipsis = {
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+};
+
 export const themeConfig = {
   colors,
   typography,
@@ -55,4 +62,5 @@ export const themeConfig = {
   globalPadding,
   globalBorderRadius,
   globalBoxShadow,
+  ellipsis,
 };

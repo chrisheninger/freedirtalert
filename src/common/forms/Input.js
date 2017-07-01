@@ -41,7 +41,9 @@ class Input extends PureComponent {
           : null}
         <input id={id} className={styles.root} {...passthroughProps} />
         {validation
-          ? <div className={styles.validation}>{validation}</div>
+          ? <div className={styles.validation}>
+              {validation}
+            </div>
           : null}
       </div>
     );
