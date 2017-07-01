@@ -6,7 +6,7 @@ export default {
     flexDirection: 'column',
     alignItems: 'center',
     minHeight: '100vh',
-    margin: '0 auto',
+    margin: '16px auto',
   }),
   header: props => ({
     width: '100%',
@@ -27,8 +27,6 @@ export default {
   city: props => ({
     color: props.theme.colors.gray700,
     borderBottom: `3px solid ${props.theme.colors.secondary}`,
-    // boxShadow: `inset 0 -1px 0 0 ${props.theme.colors
-    //   .background}, inset 0 -4px 0 0 ${props.theme.colors.secondary}`,
   }),
   switch: props => ({
     display: 'flex',
@@ -38,14 +36,19 @@ export default {
     fill: props.theme.colors.secondary,
   }),
   footer: props => ({
-    width: '100%',
+    width: '90%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     borderTop: `1px solid ${props.theme.colors.gray300}`,
-    marginTop: '24px',
-    paddingTop: '24px',
+    padding: '24px',
+    margin: '24px auto',
+  }),
+  heading: props => ({
+    fontSize: '24px',
+    fontWeight: '500',
+    marginTop: '12px',
   }),
   about: props => ({
     maxWidth: '560px',

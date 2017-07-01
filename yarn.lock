@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@types/jquery@^2.0.40":
+  version "2.0.48"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.48.tgz#3e90d8cde2d29015e5583017f7830cb3975b2eef"
+
 abab@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.3.tgz#b81de5f7274ec4e756d797cd834f303642724e5d"
@@ -50,6 +54,10 @@ acorn@^5.0.0, acorn@^5.0.1:
 address@1.0.2, address@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/address/-/address-1.0.2.tgz#480081e82b587ba319459fef512f516fe03d58af"
+
+addressparser@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/addressparser/-/addressparser-1.0.1.tgz#47afbe1a2a9262191db6838e4fd1d39b40821746"
 
 ajv-keywords@^1.0.0, ajv-keywords@^1.1.1:
   version "1.5.1"
@@ -207,6 +215,10 @@ array-includes@^3.0.3:
   dependencies:
     define-properties "^1.1.2"
     es-abstract "^1.7.0"
+
+array-indexofobject@~0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/array-indexofobject/-/array-indexofobject-0.0.1.tgz#aaa128e62c9b3c358094568c219ff64fe489d42a"
 
 array-map@~0.0.0:
   version "0.0.0"
@@ -2531,6 +2543,19 @@ fbjs@^0.8.9:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
+feedparser@*:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/feedparser/-/feedparser-2.2.1.tgz#3f6909b76e531ea876cecfeab320802a1a6d0b92"
+  dependencies:
+    addressparser "^1.0.1"
+    array-indexofobject "~0.0.1"
+    lodash.assign "^4.2.0"
+    lodash.get "^4.4.2"
+    lodash.has "^4.5.2"
+    lodash.uniq "^4.5.0"
+    readable-stream "^2.2.2"
+    sax "1.2.3"
+
 fela-dom@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/fela-dom/-/fela-dom-5.0.3.tgz#e4fcc9d10c825e257121df4444d590796603b162"
@@ -3109,9 +3134,9 @@ https-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
 
-husky@^0.14.1:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-0.14.1.tgz#8edba33e728ceed75343e88bb8002e4cbd8d1b40"
+husky@^0.14.2:
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-0.14.2.tgz#6df06483965d2254db95dd143c445d6d8509b4b8"
   dependencies:
     is-ci "^1.0.10"
     normalize-path "^1.0.0"
@@ -4063,6 +4088,10 @@ lodash._reinterpolate@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
 
+lodash.assign@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.assign/-/lodash.assign-4.2.0.tgz#0d99f3ccd7a6d261d19bdaeb9245005d285808e7"
+
 lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
@@ -4078,6 +4107,14 @@ lodash.cond@^4.3.0:
 lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+
+lodash.has@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/lodash.has/-/lodash.has-4.5.2.tgz#d19f4dc1095058cccbe2b0cdf4ee0fe4aa37c862"
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -4100,7 +4137,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.2.0, lodash@^4.3.0:
+"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -4230,11 +4267,7 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
-"mime-db@>= 1.27.0 < 2":
-  version "1.28.0"
-  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.28.0.tgz#fedd349be06d2865b7fc57d837c6de4f17d7ac3c"
-
-mime-db@~1.27.0:
+"mime-db@>= 1.27.0 < 2", mime-db@~1.27.0:
   version "1.27.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.27.0.tgz#820f572296bbd20ec25ed55e5b5de869e5436eb1"
 
@@ -4682,6 +4715,13 @@ parse-json@^2.1.0, parse-json@^2.2.0:
   resolved "https://registry.yarnpkg.com/parse-json/-/parse-json-2.2.0.tgz#f480f40434ef80741f8469099f8dea18f55a4dc9"
   dependencies:
     error-ex "^1.2.0"
+
+parse-rss@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/parse-rss/-/parse-rss-1.0.3.tgz#ff146189feb13a9e61d20448cd0b7c0588e999f1"
+  dependencies:
+    feedparser "*"
+    request "*"
 
 parse5@^1.5.1:
   version "1.5.1"
@@ -5565,7 +5605,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@^2.79.0, request@^2.81.0:
+request@*, request@^2.79.0, request@^2.81.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:
@@ -5714,9 +5754,9 @@ sane@~1.6.0:
     walker "~1.0.5"
     watch "~0.10.0"
 
-sax@^1.2.1, sax@~1.2.1:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
+sax@1.2.3, sax@^1.2.1, sax@~1.2.1:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.3.tgz#a6134f5f11259b9a563f2f976bcf759d144803e3"
 
 schema-utils@^0.3.0:
   version "0.3.0"
@@ -6232,6 +6272,12 @@ through@^2.3.6:
 thunky@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/thunky/-/thunky-0.1.0.tgz#bf30146824e2b6e67b0f2d7a4ac8beb26908684e"
+
+timeago.js@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/timeago.js/-/timeago.js-3.0.2.tgz#32a67e7c0d887ea42ca588d3aae26f77de5e76cc"
+  dependencies:
+    "@types/jquery" "^2.0.40"
 
 timed-out@^3.0.0:
   version "3.1.3"

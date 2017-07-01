@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://freedirtalert.com",
   "scripts": {
+    "scraper": "node scraper.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "react-scripts build && gh-pages -d build",
@@ -20,7 +21,8 @@
     "react-dom": "^15.6.1",
     "react-fela": "^5.0.4",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "timeago.js": "^3.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -30,9 +32,11 @@
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.1.0",
-    "husky": "^0.14.1",
+    "husky": "^0.14.2",
     "lint-staged": "^4.0.0",
+    "lodash": "^4.17.4",
     "prettier": "^1.5.2",
-    "react-scripts": "^1.0.10"
+    "react-scripts": "^1.0.10",
+    "parse-rss": "^1.0.3"
   }
 }

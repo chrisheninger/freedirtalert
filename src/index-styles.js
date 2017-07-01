@@ -26,6 +26,11 @@ export const typography = {
   bodyColor: colors.gray800,
   anchorColor: colors.primary,
   fontBase: '1rem',
+  ellipsis: {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  },
 };
 
 export const breakpoints = {
@@ -50,12 +55,6 @@ export const globalPadding = {
   },
 };
 
-export const ellipsis = {
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-};
-
 export const themeConfig = {
   colors,
   typography,
@@ -63,5 +62,4 @@ export const themeConfig = {
   globalPadding,
   globalBorderRadius,
   globalBoxShadow,
-  ellipsis,
 };

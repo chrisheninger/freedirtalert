@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import timeago from 'timeago.js';
 import { connect } from 'react-fela';
 import cardStyles from './card-styles';
 
-function Card({ children, className, location, styles, title }) {
+function Card({ children, className, date, location, styles, title }) {
   return (
     <div className={className ? className + ' ' + styles.root : styles.root}>
       <div className={styles.image} />
@@ -16,8 +17,7 @@ function Card({ children, className, location, styles, title }) {
         </div>
       </div>
       <div className={styles.actions}>
-        {/* <button>Action 1</button>
-        <button>Action 2</button> */}
+        {timeago().format(date)}
       </div>
     </div>
   );

@@ -40,7 +40,7 @@ class Main extends Component {
         <Route exact path="/" component={Home} />
         <Route path="/cities" component={Cities} />
         <footer className={styles.footer}>
-          <span>WTF?</span>
+          <h1 className={styles.heading}>About Free Dirt Alert</h1>
           <p className={styles.about}>
             Iusto delicata eu mei. Cu eos mazim choro albucius, ius quas congue
             dissentiet ad, quo te inermis accusam iudicabit. At nam solet

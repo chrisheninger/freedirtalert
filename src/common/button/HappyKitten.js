@@ -34,9 +34,6 @@ class Kitten extends Component {
 
 const mapStylesToProps = {
   kitten: props => ({
-    textAlign: 'center',
-    fontSize: '48px',
-    lineHeight: '1',
     marginTop: '24px',
     padding: '16px',
   }),
