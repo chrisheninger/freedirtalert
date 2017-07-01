@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 import { connect } from 'react-fela';
-import Home from './Home';
-import Cities from './Cities';
+import Feed from '../pages/Feed';
+import Cities from '../pages/Cities';
 import mainStyles from './main-styles';
 
 import Logo from '../Logo.js';
@@ -37,7 +37,7 @@ class Main extends Component {
             </Link>
           </div>
         </header>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Feed} />
         <Route path="/cities" component={Cities} />
         <footer className={styles.footer}>
           <h1 className={styles.heading}>About Free Dirt Alert</h1>
