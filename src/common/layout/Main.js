@@ -18,8 +18,13 @@ class Main extends Component {
           <Link to="/">
             <Logo />
           </Link>
-          <div className={styles.city}>
-            <span className={styles.text}>Free Dirt in Phoenix</span>
+          <div className={styles.tagline}>
+            <span className={styles.text}>
+              Free Dirt in{' '}
+              <Link to="/cities" className={styles.city}>
+                Phoenix
+              </Link>
+            </span>
             <Link to="/cities" className={styles.switch}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +40,16 @@ class Main extends Component {
         <Route exact path="/" component={Home} />
         <Route path="/cities" component={Cities} />
         <footer className={styles.footer}>
-          <span>WTF? CLICK TEH KITTY!</span>
+          <span>WTF?</span>
+          <p className={styles.about}>
+            Iusto delicata eu mei. Cu eos mazim choro albucius, ius quas congue
+            dissentiet ad, quo te inermis accusam iudicabit. At nam solet
+            blandit atomorum, scripta apeirian verterem ut vel. Ea summo
+            menandri disputationi qui, cu nec percipit nominati, quo no liber
+            omnium mnesarchum. Ei eam eius ceteros maluisset, nam oratio oblique
+            omnesque at. At decore vocent consulatu eam, vis adhuc solum
+            adipisci et, ubique tacimates reformidans nec cu.
+          </p>
           <HappyKitten />
         </footer>
       </div>

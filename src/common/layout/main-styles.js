@@ -7,7 +7,6 @@ export default {
     alignItems: 'center',
     minHeight: '100vh',
     margin: '0 auto',
-    ...props.theme.globalPadding,
   }),
   header: props => ({
     width: '100%',
@@ -17,13 +16,19 @@ export default {
     alignItems: 'center',
     marginBottom: '24px',
   }),
-  city: props => ({
+  tagline: props => ({
     display: 'flex',
     alignItems: 'center',
   }),
   text: props => ({
     fontSize: '24px',
     fontWeight: '700',
+  }),
+  city: props => ({
+    color: props.theme.colors.gray700,
+    borderBottom: `3px solid ${props.theme.colors.secondary}`,
+    // boxShadow: `inset 0 -1px 0 0 ${props.theme.colors
+    //   .background}, inset 0 -4px 0 0 ${props.theme.colors.secondary}`,
   }),
   switch: props => ({
     display: 'flex',
@@ -41,5 +46,9 @@ export default {
     borderTop: `1px solid ${props.theme.colors.gray300}`,
     marginTop: '24px',
     paddingTop: '24px',
+  }),
+  about: props => ({
+    maxWidth: '560px',
+    marginTop: '24px',
   }),
 };
