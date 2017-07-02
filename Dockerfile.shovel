@@ -1,7 +1,10 @@
 FROM ubuntu
 
 RUN apt-get update
-RUN apt-get -yqq install curl git build-essential
+RUN apt-get -yqq install curl git build-essential wget
+
+RUN git config --global user.email "heninger@gmail.com"
+RUN git config --global user.name "🐳 🤖 🆓 🌎 🚨"
 
 # install node
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
@@ -10,5 +13,6 @@ RUN apt-get -yqq install nodejs
 WORKDIR /src
 
 # install yarn and yarn install
+RUN git clone https://ba0347029ff714bed835b82541e04165d4c2fa35@github.com/chrisheninger/freedirtalert.com.git .
 RUN npm install -g yarn
 RUN yarn

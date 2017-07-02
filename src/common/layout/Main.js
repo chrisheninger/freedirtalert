@@ -9,49 +9,34 @@ import cities from '../../data/cities';
 import Header from './Header';
 import Footer from './Footer';
 
-const getCityFromLocation = location => {
-  switch (location) {
-    case '/': {
-      const city = store.get('city') || 'phoenix';
-      return {
-        city,
-      };
-    }
-    case '/cities': {
-      return {
-        city: null,
-      };
-    }
-    default: {
-      const city = location.split('/')[1];
-      return {
-        city: cities[city] ? city : '404',
-      };
-    }
+const getCityFromLocation = pathname => {
+  if (cities[pathname]) {
+    store.set('city', pathname);
+    return {
+      city: pathname,
+    };
   }
+
+  return {
+    city: store.get('city') || 'phoenix',
+  };
 };
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = getCityFromLocation(props.location.pathname);
-  }
-
   componentWillMount() {
     if (this.props.location.pathname) {
-      const newState = getCityFromLocation(this.props.location.pathname);
+      const newState = getCityFromLocation(
+        this.props.location.pathname.split('/')[1]
+      );
       this.setState(() => newState);
-      store.set('city', newState.city);
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
-      const newState = getCityFromLocation(nextProps.location.pathname);
-      if (newState.city) {
-        store.set('city', newState.city);
-      }
+      const newState = getCityFromLocation(
+        nextProps.location.pathname.split('/')[1]
+      );
       this.setState(() => newState);
     }
   }

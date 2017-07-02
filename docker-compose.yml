@@ -1,9 +1,14 @@
 version: '2'
 services:
-  shoveler:
+  shovel:
     build:
       context: .
       dockerfile: Dockerfile.shovel
-    volumes:
-      - .:/src
     command: ["yarn", "run", "shovel"]
+  deploy:
+    build:
+      context: .
+      dockerfile: Dockerfile.shovel
+    depends_on:
+      - "shovel"
+    command: ["./wait-for.sh", "shovel:3000", "--", "yarn", "run", "deploy"]

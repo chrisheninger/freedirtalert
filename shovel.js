@@ -1,9 +1,28 @@
-const parser = require('parse-rss');
+const http = require('http');
+const port = 3000;
+
 const fs = require('fs');
+const { exec } = require('child_process');
+const parser = require('parse-rss');
 const get = require('lodash/get');
 const sortBy = require('lodash/sortBy');
 const reverse = require('lodash/reverse');
 const cities = require('./src/data/cities');
+
+const requestHandler = (request, response) => {
+  console.log(request.url);
+  response.end('Hello Node.js Server!');
+};
+
+const server = http.createServer(requestHandler);
+
+server.listen(port, err => {
+  if (err) {
+    return console.log('something bad happened', err);
+  }
+
+  console.log(`server is listening on ${port}`);
+});
 
 Object.keys(cities).forEach(city => {
   console.log(`🆓 🌎 🚨  Let's shovel some dirt in ${cities[city]}! 🚨 🌎 🆓`);

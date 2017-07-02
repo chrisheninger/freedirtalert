@@ -13,10 +13,11 @@ export default {
   image: props => ({
     display: 'block',
     width: '320px',
-    height: '192px',
+    height: '196px',
     backgroundColor: props.theme.colors.primaryDark,
     backgroundImage: `url('${props.image}')`,
     backgroundSize: 'cover',
+    backgroundPosition: 'center center',
   }),
   content: props => ({
     paddingTop: '24px',

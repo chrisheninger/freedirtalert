@@ -17,7 +17,7 @@ function Card({ children, className, date, location, styles, title }) {
         </div>
       </div>
       <div className={styles.actions}>
-        {timeago().format(date)}
+        Updated {timeago().format(date)}
       </div>
     </div>
   );
