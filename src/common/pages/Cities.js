@@ -7,9 +7,11 @@ const Cities = ({ styles }) =>
   <div className={styles.root}>
     {Object.keys(cities).map(city => {
       return (
-        <Link key={city} to={`/${city}`} className={styles.link}>
-          {cities[city]}
-        </Link>
+        <div key={city}>
+          <Link to={`/${city}`} className={styles.link}>
+            {cities[city]}
+          </Link>
+        </div>
       );
     })}
   </div>;

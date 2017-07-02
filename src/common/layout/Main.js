@@ -9,28 +9,23 @@ import cities from '../../data/cities';
 import Header from './Header';
 import Footer from './Footer';
 
-const dynamicImport = city => import(`../../data/${city}.json`);
-
 const getCityFromLocation = location => {
   switch (location) {
     case '/': {
       const city = store.get('city') || 'phoenix';
       return {
         city,
-        data: dynamicImport(city),
       };
     }
     case '/cities': {
       return {
-        city: 'choose a city below',
-        data: null,
+        city: null,
       };
     }
     default: {
       const city = location.split('/')[1];
       return {
-        city,
-        data: dynamicImport(city),
+        city: cities[city] ? city : '404',
       };
     }
   }
@@ -43,29 +38,41 @@ class Main extends Component {
     this.state = getCityFromLocation(props.location.pathname);
   }
 
+  componentWillMount() {
+    if (this.props.location.pathname) {
+      const newState = getCityFromLocation(this.props.location.pathname);
+      this.setState(() => newState);
+      store.set('city', newState.city);
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
       const newState = getCityFromLocation(nextProps.location.pathname);
-      if (newState.city === 'choose a city below') {
-        this.setState(() => newState);
-      } else if (Object.keys(cities).indexOf(newState.city) > -1) {
-        this.setState(() => newState);
+      if (newState.city) {
         store.set('city', newState.city);
       }
+      this.setState(() => newState);
     }
   }
 
   render() {
     const { styles } = this.props;
-    const { city, data } = this.state;
+    const { city } = this.state;
 
     return (
       <div className={styles.root}>
         <Header city={city} />
         <Switch>
-          <Route exact path="/" children={() => <Listings data={data} />} />
-          <Route path="/cities" component={Cities} />
-          <Route path="/:city" children={() => <Listings data={data} />} />
+          <Route exact path="/">
+            <Listings city={city} />
+          </Route>
+          <Route path="/cities">
+            <Cities />
+          </Route>
+          <Route path="/:city">
+            <Listings city={city} />
+          </Route>
         </Switch>
         <Footer />
       </div>

@@ -4,26 +4,29 @@ import { Link } from 'react-router-dom';
 import Card from '../card/Card';
 import Loader from '../layout/Loader';
 
+const dynamicImport = city => import(`../../data/${city}.json`);
+
 class Feed extends Component {
   state = {
     listings: null,
   };
 
-  componentWillMount() {
-    this.loadData(this.props);
+  componentDidMount() {
+    this.importListings(this.props.city);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.data !== this.props.data) {
-      this.loadData(nextProps);
+    if (this.props.city !== nextProps.city) {
+      this.importListings(nextProps.city);
     }
   }
 
-  loadData(props) {
-    this.setState({
+  importListings = city => {
+    this.setState(() => ({
       listings: null,
-    });
-    props.data
+    }));
+
+    dynamicImport(city)
       .then(listings => {
         this.setState(() => ({
           listings,
@@ -36,7 +39,8 @@ class Feed extends Component {
           </div>
         );
       });
-  }
+  };
+
   render() {
     const { styles } = this.props;
     const { listings } = this.state;

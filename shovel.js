@@ -27,11 +27,12 @@ Object.keys(cities).forEach(city => {
           date: get(item, 'date'),
           link: get(item, 'link'),
           image:
-            get(item, ['enc:enclosure', '@', 'resource']) &&
-            get(item, ['enc:enclosure', '@', 'resource']).replace(
-              '300x300.jpg',
-              '600x450.jpg'
-            ),
+            (get(item, ['enc:enclosure', '@', 'resource']) &&
+              get(item, ['enc:enclosure', '@', 'resource']).replace(
+                '300x300.jpg',
+                '600x450.jpg'
+              )) ||
+            'https://freedirtalert.com/images/no-dirt.png',
         };
         dirts.push(listing);
       });
