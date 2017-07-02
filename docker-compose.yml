@@ -1,13 +1,11 @@
 version: '2'
 services:
   shovel:
+    env_file:
+      - .env
     build:
+      args:
+        - secret=${SECRET}
       context: .
       dockerfile: Dockerfile.shovel
-    env_file:
-      - ./common.env
     command: ["yarn", "run", "shovel"]
-  deploy:
-    depends_on:
-      - "shovel"
-    command: ["./wait-for.sh", "shovel:3000", "--", "yarn", "run", "deploy"]

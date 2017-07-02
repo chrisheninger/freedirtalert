@@ -13,6 +13,7 @@ RUN apt-get -yqq install nodejs
 WORKDIR /src
 
 # install yarn and yarn install
-RUN git clone https://ba0347029ff714bed835b82541e04165d4c2fa35@github.com/chrisheninger/freedirtalert.com.git .
+ARG secret
+RUN git clone https://${secret}@github.com/chrisheninger/freedirtalert.com.git .
 RUN npm install -g yarn
 RUN yarn

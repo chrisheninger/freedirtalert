@@ -1,9 +1,9 @@
 {
   "name": "freedirtalert.com",
-  "version": "1.33.7",
+  "version": "3.1.33.7",
   "homepage": "https://freedirtalert.com",
   "scripts": {
-    "shovel": "node shovel.js",
+    "shovel": "node shovel.js && yarn run deploy",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "react-scripts build && gh-pages -d build",
