@@ -1,0 +1,9 @@
+version: '2'
+services:
+  shoveler:
+    build:
+      context: .
+      dockerfile: Dockerfile.shovel
+    volumes:
+      - .:/src
+    command: ["yarn", "run", "shovel"]
