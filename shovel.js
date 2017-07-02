@@ -43,10 +43,16 @@ Object.keys(cities).forEach(city => {
       });
       dirts = reverse(dirts);
 
+      const jsonResults = {
+        city,
+        date: Date.now(),
+        data: dirts,
+      };
+
       // Save json file to disk in data directory
       fs.writeFile(
         `./src/data/${city}.json`,
-        JSON.stringify(dirts),
+        JSON.stringify(jsonResults),
         'utf8',
         function(err) {
           if (err) throw err;

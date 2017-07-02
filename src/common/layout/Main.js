@@ -42,12 +42,12 @@ class Main extends Component {
   }
 
   render() {
-    const { styles } = this.props;
+    const { location, styles } = this.props;
     const { city } = this.state;
 
     return (
       <div className={styles.root}>
-        <Header city={city} />
+        <Header city={city} backTo={location.pathname === '/cities'} />
         <Switch>
           <Route exact path="/">
             <Listings city={city} />

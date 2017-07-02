@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-fela';
 import { Link } from 'react-router-dom';
+import timeago from 'timeago.js';
 import Card from '../card/Card';
 import Loader from '../layout/Loader';
 
@@ -49,24 +50,31 @@ class Feed extends Component {
       return <Loader />;
     }
 
+    const lastUpdated = timeago().format(listings.date);
+
     return (
       <div className={styles.root}>
-        {listings.map((dirt, i) =>
-          <Link
-            className={styles.link}
-            key={i}
-            to={dirt.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Card
-              image={dirt.image || ''}
-              title={dirt.title}
-              location={dirt.location}
-              date={dirt.date}
-            />
-          </Link>
-        )}
+        <div className={styles.heading}>
+          Results update every hour – last updated {lastUpdated}
+        </div>
+        <div className={styles.listings}>
+          {listings.data.map((dirt, i) =>
+            <Link
+              className={styles.link}
+              key={i}
+              to={dirt.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Card
+                image={dirt.image || ''}
+                title={dirt.title}
+                location={dirt.location}
+                date={dirt.date}
+              />
+            </Link>
+          )}
+        </div>
       </div>
     );
   }
@@ -74,7 +82,18 @@ class Feed extends Component {
 
 export default connect({
   root: props => ({
-    flex: '1',
+    width: '100%',
+    maxWidth: '1200px',
+    display: 'flex',
+    flexDirection: 'column',
+    margin: '0 auto',
+    padding: '8px',
+  }),
+  heading: props => ({
+    textAlign: 'center',
+    fontSize: '14px',
+  }),
+  listings: props => ({
     width: '100%',
     maxWidth: '1200px',
     display: 'flex',
@@ -82,7 +101,6 @@ export default connect({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    margin: '0 auto',
   }),
   link: props => ({
     margin: '8px',

@@ -5,20 +5,34 @@ import cities from '../../data/cities';
 
 const Cities = ({ styles }) =>
   <div className={styles.root}>
-    {Object.keys(cities).map(city => {
-      return (
-        <div key={city}>
-          <Link to={`/${city}`} className={styles.link}>
-            {cities[city]}
-          </Link>
-        </div>
-      );
-    })}
+    <div className={styles.heading}>Choose a city</div>
+    <div className={styles.cities}>
+      {Object.keys(cities).map(city => {
+        return (
+          <div key={city}>
+            <Link to={`/${city}`} className={styles.link}>
+              {cities[city]}
+            </Link>
+          </div>
+        );
+      })}
+    </div>
   </div>;
 
 export default connect({
   root: props => ({
-    flex: '1',
+    width: '100%',
+    maxWidth: '1200px',
+    display: 'flex',
+    flexDirection: 'column',
+    margin: '0 auto',
+    padding: '8px',
+  }),
+  heading: props => ({
+    textAlign: 'center',
+    fontSize: '14px',
+  }),
+  cities: props => ({
     width: '100%',
     maxWidth: '1200px',
     display: 'flex',

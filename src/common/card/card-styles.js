@@ -3,7 +3,7 @@ export default {
   root: props => ({
     display: 'flex',
     flexDirection: 'column',
-    width: '320px',
+    width: '304px',
     height: 'auto',
     background: props.theme.colors.white,
     boxShadow: props.theme.globalBoxShadow,
@@ -11,9 +11,8 @@ export default {
     overflow: 'hidden',
   }),
   image: props => ({
-    display: 'block',
-    width: '320px',
-    height: '196px',
+    width: '100%',
+    height: '180px',
     backgroundColor: props.theme.colors.primaryDark,
     backgroundImage: `url('${props.image}')`,
     backgroundSize: 'cover',
