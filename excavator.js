@@ -9,7 +9,7 @@ const cwd = null;
 
 function exec(command, args, hideFunction) {
   if (!hideFunction) {
-    console.log('>', [command].concat(args).join(' '));
+    console.log('🚜 >', [command].concat(args).join(' '));
   }
   const options = {};
   if (cwd) {

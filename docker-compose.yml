@@ -7,5 +7,5 @@ services:
       args:
         - secret=${SECRET}
       context: .
-      dockerfile: Dockerfile.shovel
+      dockerfile: Dockerfile.excavator
     command: ["yarn", "run", "excavator"]
