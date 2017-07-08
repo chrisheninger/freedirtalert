@@ -4,6 +4,7 @@
   "homepage": "https://freedirtalert.com",
   "scripts": {
     "shovel": "node shovel.js && yarn run deploy",
+    "excavator": "node excavator.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "react-scripts build && gh-pages -d build",

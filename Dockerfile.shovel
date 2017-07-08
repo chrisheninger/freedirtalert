@@ -7,7 +7,7 @@ RUN git config --global user.email "heninger@gmail.com"
 RUN git config --global user.name "🐳 🤖 🆓 🌎 🚨"
 
 # install node
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get -yqq install nodejs
 
 WORKDIR /src

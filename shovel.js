@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const parser = require('parse-rss');
 const get = require('lodash/get');
