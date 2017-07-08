@@ -85,10 +85,11 @@ function updateGitIfChanged(commitHash) {
 /**
  * The script
  */
-setTimeout(() => {
+const lol = setTimeout(() => {
   ensureGitIsClean();
   runExcavator();
 
   const commitHash = getCommitHash();
   updateGitIfChanged(commitHash);
+  lol();
 }, 60000);
