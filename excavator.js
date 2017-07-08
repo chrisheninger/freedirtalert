@@ -1,10 +1,6 @@
 #!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
 const execFileSync = require('child_process').execFileSync;
-
-const prompt = 'dirt-excavator';
+const prompt = '🚜 🚜 🚜  Dirt Excavator 3000';
 const cwd = null;
 
 /**
@@ -59,8 +55,13 @@ function runExcavator(jsFiles) {
   }
 }
 
-function getLastCommitAuthor() {
-  return exec('git', ['log', '-1', '--format="%an <%ae>"']).trim();
+function runDeploy() {
+  try {
+    exec('yarn', ['run', 'deploy']);
+  } catch (e) {
+    console.log('Something broke while deploying.');
+    process.exit(1);
+  }
 }
 
 function updateGitIfChanged(commitHash) {
@@ -68,14 +69,14 @@ function updateGitIfChanged(commitHash) {
   if (status.length > 0) {
     const branch = 'master';
     exec('git', ['add', '--all']);
-    exec('git', ['commit', '-m', '🤖', '--author=' + getLastCommitAuthor()]);
-    const filesUpdated = getFilesChanged(getCommitHash()).join('\n');
-    console.log(prompt + ': files updated:\n' + filesUpdated);
+    exec('git', ['commit', '-m', '🤖']);
+    const filesUpdated = getFilesChanged(getCommitHash()).join(' + ');
+    console.log(prompt + ': files updated: ' + filesUpdated);
     try {
       exec('git', ['push', 'origin', branch]);
-      console.log(prompt + ': success!');
+      console.log(prompt + ': Success! 😄');
     } catch (e) {
-      console.log(prompt + ': unable to push changes to master');
+      console.log(prompt + ': Unable to push changes to master. 😢');
     }
   } else {
     console.log(prompt + ': nothing to update');
@@ -86,14 +87,15 @@ function updateGitIfChanged(commitHash) {
  * The script
  */
 function readySetGo() {
-  console.trace();
   ensureGitIsClean();
   runExcavator();
 
   const commitHash = getCommitHash();
   updateGitIfChanged(commitHash);
 
-  setTimeout(readySetGo, 10000);
+  runDeploy();
+
+  setTimeout(readySetGo, 3600000);
 }
 
 readySetGo();
