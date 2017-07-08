@@ -8,4 +8,4 @@ services:
         - secret=${SECRET}
       context: .
       dockerfile: Dockerfile.shovel
-    command: ["yarn", "run", "shovel"]
+    command: ["yarn", "run", "excavator"]
