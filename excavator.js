@@ -85,11 +85,15 @@ function updateGitIfChanged(commitHash) {
 /**
  * The script
  */
-const lol = setTimeout(() => {
+function readySetGo() {
+  console.trace();
   ensureGitIsClean();
   runExcavator();
 
   const commitHash = getCommitHash();
   updateGitIfChanged(commitHash);
-  lol();
-}, 60000);
+
+  setTimeout(readySetGo, 10000);
+}
+
+readySetGo();
