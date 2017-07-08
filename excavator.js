@@ -5,8 +5,6 @@ const path = require('path');
 const execFileSync = require('child_process').execFileSync;
 
 const prompt = 'dirt-excavator';
-const shovelCommand = 'node shovel.js';
-
 const cwd = null;
 
 /**
@@ -54,7 +52,7 @@ function getFilesChanged(commitHash) {
 
 function runExcavator(jsFiles) {
   try {
-    exec(shovelCommand);
+    exec('node', ['shovel.js']);
   } catch (e) {
     console.log('Something broke while trying to shovel dirt.');
     process.exit(1);
