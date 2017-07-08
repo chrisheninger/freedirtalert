@@ -17,3 +17,5 @@ ARG secret
 RUN git clone https://${secret}@github.com/chrisheninger/freedirtalert.com.git .
 RUN npm install -g yarn
 RUN yarn
+
+CMD [ "yarn", "run", "excavator" ]
