@@ -1,11 +1,11 @@
 version: '2'
 services:
-  shovel:
+  excavator:
     env_file:
       - .env
     build:
       args:
         - secret=${SECRET}
       context: .
-      dockerfile: Dockerfile.excavator
+      dockerfile: Dockerfile
     command: ["yarn", "run", "excavator"]
