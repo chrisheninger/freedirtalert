@@ -73,11 +73,7 @@ function updateGitIfChanged(commitHash) {
     console.log(prompt + ': files updated:\n' + filesUpdated);
     try {
       exec('git', ['push', 'origin', branch]);
-      const outcome =
-        status.length === 1
-          ? '1 file prettified!'
-          : status.length + ' files prettified!';
-      console.log(prompt + ': ' + outcome);
+      console.log(prompt + ': success!');
     } catch (e) {
       console.log(prompt + ': unable to push changes to master');
     }
@@ -89,9 +85,10 @@ function updateGitIfChanged(commitHash) {
 /**
  * The script
  */
+setTimeout(() => {
+  ensureGitIsClean();
+  runExcavator();
 
-ensureGitIsClean();
-runExcavator();
-
-const commitHash = getCommitHash();
-updateGitIfChanged(commitHash);
+  const commitHash = getCommitHash();
+  updateGitIfChanged(commitHash);
+}, 60000);
