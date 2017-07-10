@@ -18,6 +18,47 @@ function exec(command, args, hideFunction) {
   return execFileSync(command, args, options).toString();
 }
 
+function connectToGitHub() {
+  if (!process.env.GITHUB_USER || !process.env.GITHUB_TOKEN) {
+    console.log(
+      'In order to use ' +
+        prompt +
+        ', you need to configure a ' +
+        'few environment variables to be able to commit to the ' +
+        'repository. Follow those steps to get you set up:\n' +
+        '\n' +
+        'Go to https://github.com/settings/tokens/new\n' +
+        ' - Check "public_repo"\n' +
+        ' - Press "Generate Token"\n' +
+        'You should now have a GITHUB_USER and GITHUB_TOKEN'
+    );
+    process.exit(1);
+  }
+
+  exec('git', ['config', '--global', 'user.name', '🚜 🤖']);
+  exec('git', [
+    'config',
+    '--global',
+    'user.email',
+    'dirt-excavator@no-reply.github.com',
+  ]);
+  exec('git', ['remote', 'rm', 'origin']);
+  exec(
+    'git',
+    [
+      'remote',
+      'add',
+      'origin',
+      'https://' +
+        process.env.GITHUB_USER +
+        ':' +
+        process.env.GITHUB_TOKEN +
+        '@github.com/chrisheninger/freedirtalert.git',
+    ],
+    true
+  );
+}
+
 function ensureGitIsClean() {
   if (exec('git', ['status', '--porcelain'])) {
     console.log(prompt + ': `git status` is not clean, aborting.');
@@ -46,7 +87,7 @@ function getFilesChanged(commitHash) {
   });
 }
 
-function runExcavator(jsFiles) {
+function shovelDirt(jsFiles) {
   try {
     exec('node', ['shovel.js']);
   } catch (e) {
@@ -87,8 +128,10 @@ function updateGitIfChanged(commitHash) {
  * The script
  */
 function readySetGo() {
+  connectToGitHub();
   ensureGitIsClean();
-  runExcavator();
+
+  shovelDirt();
 
   const commitHash = getCommitHash();
   updateGitIfChanged(commitHash);

@@ -8,7 +8,7 @@ const reverse = require('lodash/reverse');
 const cities = require('./src/data/cities');
 
 Object.keys(cities).forEach(city => {
-  console.log(`🆓 🌎 🚨  Let's shovel some dirt in ${cities[city]}! 🚨 🌎 🆓`);
+  console.log('🚜 >', `Let's shovel some dirt in ${cities[city]}! 🚨 🌎 🆓`);
   // Parse RSS feed to JSON
   parser(
     `https://${city}.craigslist.org/search/zip?format=rss&query=Dirt`,
@@ -60,6 +60,7 @@ Object.keys(cities).forEach(city => {
           if (err) throw err;
 
           console.log(
+            '🚜 >',
             `🆓 🌎 🚨  All the dirt in ${cities[
               city
             ]} has been shoveled! 🚨 🌎 🆓`
