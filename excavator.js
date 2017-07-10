@@ -53,7 +53,7 @@ function connectToGitHub() {
         process.env.GITHUB_USER +
         ':' +
         process.env.GITHUB_TOKEN +
-        '@github.com/chrisheninger/freedirtalert.git',
+        '@github.com/chrisheninger/freedirtalert.com.git',
     ],
     true
   );
