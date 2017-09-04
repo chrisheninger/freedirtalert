@@ -6,7 +6,7 @@ Are you tired of having a super difficult time finding fill dirt? Look no furthe
 
 ## About
 
-This project was created as a joke– all thanks to @sprucebruce's incessant posting of Craigslist dirt in our company Slack.
+This project was created as a joke– all thanks to incessant posting of Craigslist dirt in our company Slack.
 
 Many of the tools used for this project are *not* the right tools for the job– I was more interested in experimenting with new technologies. (react-scripts, react-fela, gh-pages, prettier, husky/lint-staged, docker, node, etc.)
 
