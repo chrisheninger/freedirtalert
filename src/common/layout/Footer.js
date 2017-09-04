@@ -1,21 +1,22 @@
 import React from 'react';
 import { connect } from 'react-fela';
+import cities from '../../data/cities';
 import HappyKitten from '../button/HappyKitten.js';
 
-const Footer = ({ styles }) =>
+const Footer = ({ city, styles }) => (
   <footer className={styles.root}>
     <h1 className={styles.heading}>About Free Dirt Alert</h1>
     <p className={styles.about}>
-      Iusto delicata eu mei. Cu eos mazim choro albucius, ius quas congue
-      dissentiet ad, quo te inermis accusam iudicabit. At nam solet blandit
-      atomorum, scripta apeirian verterem ut vel. Ea summo menandri disputationi
-      qui, cu nec percipit nominati, quo no liber omnium mnesarchum. Ei eam eius
-      ceteros maluisset, nam oratio oblique omnesque at. At decore vocent
-      consulatu eam, vis adhuc solum adipisci et, ubique tacimates reformidans
-      nec cu.
+      Are you tired of having a difficult time finding fill dirt in{' '}
+      {cities[city] || city}? Look no further! FreeDirtAlert.com is your
+      one-stop-shop for finding free clean dirt and top soil around{' '}
+      {cities[city] || city}. Looking for a place to dump fill dirt in{' '}
+      {cities[city] || city}? You can probably find that on this site too. The
+      possibilities!
     </p>
     <HappyKitten />
-  </footer>;
+  </footer>
+);
 
 export default connect({
   root: props => ({

@@ -59,7 +59,7 @@ class Main extends Component {
             <Listings city={city} />
           </Route>
         </Switch>
-        <Footer />
+        <Footer city={city} />
       </div>
     );
   }

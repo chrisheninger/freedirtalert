@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import { connect } from 'react-fela';
 import { Link } from 'react-router-dom';
@@ -34,11 +35,7 @@ class Feed extends Component {
         }));
       })
       .catch(err => {
-        return (
-          <div>
-            Something went wrong. {err}
-          </div>
-        );
+        return <div>Dirt didn't dig. Try refreshing?</div>;
       });
   };
 
@@ -58,7 +55,7 @@ class Feed extends Component {
           Results update every hour – last updated {lastUpdated}
         </div>
         <div className={styles.listings}>
-          {listings.data.map((dirt, i) =>
+          {listings.data.map((dirt, i) => (
             <Link
               className={styles.link}
               key={i}
@@ -73,7 +70,7 @@ class Feed extends Component {
                 date={dirt.date}
               />
             </Link>
-          )}
+          ))}
         </div>
       </div>
     );
