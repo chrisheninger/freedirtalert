@@ -35,6 +35,7 @@ export default connect({
     marginTop: '12px',
   }),
   about: props => ({
+    lineHeight: '1.4',
     maxWidth: '560px',
     marginTop: '24px',
   }),
