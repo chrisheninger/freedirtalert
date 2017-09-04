@@ -57,6 +57,8 @@ function connectToGitHub() {
     ],
     true
   );
+  console.log('🚜 🚜 🚜 🚜 🚜');
+  exec('git', ['pull']);
 }
 
 function ensureGitIsClean() {

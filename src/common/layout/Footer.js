@@ -14,6 +14,16 @@ const Footer = ({ city, styles }) => (
       {cities[city] || city}? You can probably find that on this site too. The
       possibilities!
     </p>
+    <p className={styles.about}>
+      Want to know more?{' '}
+      <a
+        href="https://github.com/chrisheninger/freedirtalert.com"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        Visit the GitHub repo.
+      </a>
+    </p>
     <HappyKitten />
   </footer>
 );
