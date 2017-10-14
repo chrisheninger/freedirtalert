@@ -15,39 +15,19 @@ class Feed extends Component {
   };
 
   componentDidMount() {
-    this.importListings(this.props.city);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props.city !== nextProps.city) {
-      this.importListings(nextProps.city);
-    }
-  }
-
-  importListings = city => {
-    this.setState(() => ({
-      listings: null,
-    }));
-
-    fetch.get(`${city}.json`).then(response => {
-      response.json().then(listings => {
-        console.log(listings);
-        this.setState(() => ({
-          listings,
-        }));
-      });
+    fetch.get(`${this.props.city}.json`).then(response => {
+      response
+        .json()
+        .then(listings => {
+          this.setState(() => ({
+            listings,
+          }));
+        })
+        .catch(err => {
+          console.error(err);
+        });
     });
-
-    // dynamicImport(city)
-    //   .then(listings => {
-    //     this.setState(() => ({
-    //       listings,
-    //     }));
-    //   })
-    //   .catch(err => {
-    //     return <div>Dirt didn't dig. Try refreshing?</div>;
-    //   });
-  };
+  }
 
   render() {
     const { styles } = this.props;

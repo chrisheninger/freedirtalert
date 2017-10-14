@@ -47,6 +47,6 @@ export default connect({
     fontWeight: '700',
     color: props.theme.colors.gray700,
     borderBottom: `3px solid ${props.theme.colors.secondary}`,
-    marginBottom: '16px',
+    margin: '8px',
   }),
 })(Cities);
