@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-fela';
-import cities from '../../data/cities';
+import cities from '../../cities';
 
-const Cities = ({ styles }) =>
+const Cities = ({ styles }) => (
   <div className={styles.root}>
     <div className={styles.heading}>Choose a city</div>
     <div className={styles.cities}>
@@ -17,7 +17,8 @@ const Cities = ({ styles }) =>
         );
       })}
     </div>
-  </div>;
+  </div>
+);
 
 export default connect({
   root: props => ({

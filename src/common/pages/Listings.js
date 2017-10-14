@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import timeago from 'timeago.js';
 import Card from '../card/Card';
 import Loader from '../layout/Loader';
+import FetchClient from '@synapsestudios/fetch-client';
 
-const dynamicImport = city => import(`../../data/${city}.json`);
+const fetch = new FetchClient({ url: '/data' });
 
 class Feed extends Component {
   state = {
@@ -28,15 +29,24 @@ class Feed extends Component {
       listings: null,
     }));
 
-    dynamicImport(city)
-      .then(listings => {
+    fetch.get(`${city}.json`).then(response => {
+      response.json().then(listings => {
+        console.log(listings);
         this.setState(() => ({
           listings,
         }));
-      })
-      .catch(err => {
-        return <div>Dirt didn't dig. Try refreshing?</div>;
       });
+    });
+
+    // dynamicImport(city)
+    //   .then(listings => {
+    //     this.setState(() => ({
+    //       listings,
+    //     }));
+    //   })
+    //   .catch(err => {
+    //     return <div>Dirt didn't dig. Try refreshing?</div>;
+    //   });
   };
 
   render() {

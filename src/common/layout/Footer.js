@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-fela';
-import cities from '../../data/cities';
+import cities from '../../cities';
 import HappyKitten from '../button/HappyKitten.js';
 
 const Footer = ({ city, styles }) => (
