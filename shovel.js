@@ -5,7 +5,7 @@ const parser = require('parse-rss');
 const get = require('lodash/get');
 const sortBy = require('lodash/sortBy');
 const reverse = require('lodash/reverse');
-const cities = require('./src/data/cities');
+const cities = require('./src/cities');
 
 Object.keys(cities).forEach(city => {
   console.log('🚜 >', `Let's shovel some dirt in ${cities[city]}! 🚨 🌎 🆓`);
@@ -53,7 +53,7 @@ Object.keys(cities).forEach(city => {
 
       // Save json file to disk in data directory
       fs.writeFile(
-        `./src/data/${city}.json`,
+        `./public/data/${city}.json`,
         JSON.stringify(jsonResults),
         'utf8',
         function(err) {

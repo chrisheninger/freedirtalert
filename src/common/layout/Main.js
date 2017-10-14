@@ -4,7 +4,7 @@ import { connect } from 'react-fela';
 import store from 'store2';
 import Listings from '../pages/Listings';
 import Cities from '../pages/Cities';
-import cities from '../../data/cities';
+import cities from '../../cities';
 
 import Header from './Header';
 import Footer from './Footer';

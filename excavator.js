@@ -77,15 +77,6 @@ function shovelDirt(jsFiles) {
   }
 }
 
-function runDeploy() {
-  try {
-    exec('yarn', ['run', 'deploy']);
-  } catch (e) {
-    console.log('Something broke while deploying.');
-    process.exit(1);
-  }
-}
-
 /**
  * The script
  */
@@ -94,7 +85,6 @@ function readySetGo() {
   ensureGitIsClean();
 
   shovelDirt();
-  runDeploy();
 
   setTimeout(readySetGo, 3600000);
 }
