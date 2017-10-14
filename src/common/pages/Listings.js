@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-fela';
 import { Link } from 'react-router-dom';
 import timeago from 'timeago.js';
-import Card from '../card/Card';
+import Card from '../card';
 import Loader from '../layout/Loader';
 import FetchClient from '@synapsestudios/fetch-client';
 
 const fetch = new FetchClient({ url: '/data' });
 
-class Feed extends Component {
+class Listings extends Component {
   state = {
     listings: null,
   };
@@ -92,4 +92,4 @@ export default connect({
   link: props => ({
     margin: '8px',
   }),
-})(Feed);
+})(Listings);

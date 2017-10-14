@@ -1,5 +1,31 @@
-/* Base styles thanks to Google's https://material.io/guidelines/components/cards.html */
-export default {
+import React from 'react';
+import PropTypes from 'prop-types';
+import timeago from 'timeago.js';
+import { connect } from 'react-fela';
+
+const Card = ({ children, className, date, location, styles, title }) => (
+  <div className={className ? className + ' ' + styles.root : styles.root}>
+    <div className={styles.image} />
+    <div className={styles.content}>
+      <div className={styles.title} title={title}>
+        {title}
+      </div>
+      <div className={styles.location}>{location}</div>
+    </div>
+    <div className={styles.actions}>Posted {timeago().format(date)}</div>
+  </div>
+);
+
+Card.propTypes = {
+  children: PropTypes.node,
+  date: PropTypes.string.isRequired,
+  className: PropTypes.node,
+  location: PropTypes.string.isRequired,
+  styles: PropTypes.object,
+  title: PropTypes.string.isRequired,
+};
+
+export default connect({
   root: props => ({
     display: 'flex',
     flexDirection: 'column',
@@ -48,4 +74,4 @@ export default {
     paddingBottom: '8px',
     paddingLeft: '8px',
   }),
-};
+})(Card);
