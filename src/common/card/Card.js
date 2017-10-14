@@ -12,13 +12,9 @@ function Card({ children, className, date, location, styles, title }) {
         <div className={styles.title} title={title}>
           {title}
         </div>
-        <div className={styles.location}>
-          {location}
-        </div>
+        <div className={styles.location}>{location}</div>
       </div>
-      <div className={styles.actions}>
-        Updated {timeago().format(date)}
-      </div>
+      <div className={styles.actions}>Updated {timeago().format(date)}</div>
     </div>
   );
 }
