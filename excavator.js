@@ -17,6 +17,31 @@ function exec(command, args, hideFunction) {
   return execFileSync(command, args, options).toString();
 }
 
+function githubSetup() {
+  exec('git', ['config', '--global', 'user.name', '🚜 🤖']);
+  exec('git', [
+    'config',
+    '--global',
+    'user.email',
+    'dirt-excavator@no-reply.github.com',
+  ]);
+  exec('git', ['init']);
+  exec(
+    'git',
+    [
+      'remote',
+      'add',
+      'origin',
+      'https://' +
+        process.env.GITHUB_USER +
+        ':' +
+        process.env.GITHUB_TOKEN +
+        '@github.com/chrisheninger/freedirtalert.com.git',
+    ],
+    true
+  );
+}
+
 function shovel(city, cb) {
   console.log(`🚜  > Let's shovel some dirt in ${cities[city]}! 🚨 🌎 🆓`);
 
@@ -101,4 +126,5 @@ function loop() {
   });
 }
 
+githubSetup();
 loop();
