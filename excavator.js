@@ -49,7 +49,10 @@ function shovel(city, cb) {
   parser(
     `https://${city}.craigslist.org/search/zip?format=rss&query=Dirt`,
     function(err, res) {
-      if (err) throw err;
+      if (err) {
+        console.error(city, err);
+        throw err;
+      }
 
       let dirts = [];
 
