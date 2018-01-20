@@ -124,7 +124,7 @@ function loop() {
   Promise.all(requests).then(() => {
     console.log(`${prompt}: Finished digging!`);
     exec('yarn', ['run', 'deploy']);
-
+    console.log('That was exhausting... taking a one hour break. 🚧 👋 ⏰');
     setTimeout(loop, 3600000);
   });
 }
