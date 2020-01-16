@@ -2,7 +2,7 @@
 
 # 🆓 🌎 🚨 Free Dirt Alert
 
-Are you tired of having a super difficult time finding fill dirt? Look no further! [FreeDirtAlert.com](https://freedirtalert.com) is your one-stop-shop for finding free clean dirt and top soil. Looking for a place to dump fill dirt? You can probably find that on this site too. The possibilities!
+Are you tired of having a super difficult time finding fill dirt? Look no further! FreeDirtAlert is your one-stop-shop for finding free clean dirt and top soil. Looking for a place to dump fill dirt? You can probably find that on this site too. The possibilities!
 
 ## About
 
